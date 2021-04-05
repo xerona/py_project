@@ -1,0 +1,4 @@
+server/static/css
+server/static/js
+__pycache__/
+*.pyc

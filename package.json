@@ -1,0 +1,54 @@
+{
+  "name": "docker-nginx-react-app",
+  "version": "0.1.1",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.6.0",
+    "react": "^16.4.2",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^16.4.2",
+    "concurrently": "^5.1.0",
+    "react-router-dom": "^5.2.0",
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "webpack --config webpack.js --mode=development",
+    "build:css": "node-sass client/src/scss/main.scss server/static/css/compiled.css",
+    "watch": "concurrently -p '{time} [{name}]' -t 'HH:mm:ss' -c \"cyan.dim,magenta.dim\" -k npm:watch:js npm:watch:css",
+    "watch:js": "webpack --config webpack.js --mode=development --watch",
+    "watch:css": "watch \"npm run build:css\" client/src/scss/ --wait 5 --interval 5"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.9.0",
+    "react-scripts": "1.1.5",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "brfs": "^2.0.2",
+    "es5-shim": "^4.5.14",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.4",
+    "raw-loader": "^4.0.0",
+    "watch": "^1.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  }
+}

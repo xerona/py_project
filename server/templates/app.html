@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Py Project</title>
+        <script>
+            var activePage = '{{path}}';
+        </script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/compiled.css') }}">
+    </head>
+    <body>
+      <div id="react-hook"></div>
+    </body>
+    <script src="{{ url_for('static', filename='js/' + path + '.js') }}"></script>
+</html>
